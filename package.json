@@ -1,0 +1,19 @@
+{
+  "name": "simple-ecommerce-api",
+  "version": "1.0.0",
+  "description": "simulating a simple e-commerce platform where a user can make an order.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrtoluadesina/simple-ecommerce-api.git"
+  },
+  "author": "Tolu Adesina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrtoluadesina/simple-ecommerce-api/issues"
+  },
+  "homepage": "https://github.com/mrtoluadesina/simple-ecommerce-api#readme"
+}

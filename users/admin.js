@@ -25,7 +25,7 @@ Admin.prototype.deleteAUser = function(id) {
 
 Admin.prototype.deleteAllUsers = function() {
   console.log('Delete All Users');
-  db = [];
+  db.length = 0;
   console.log(db);
   return 'All Users Deleted';
 }

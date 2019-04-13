@@ -6,9 +6,9 @@ function User() {
 User.prototype.createUser = function(name, email, password) {
   console.log('User created');
   db.push({
-    name : this.name,
-    email: this.email,
-    password: this.email,
+    name,
+    email,
+    password,
     id: db.length > 0 ? db[db.length - 1].id + 1 : 1
   });
   return 'User Created';

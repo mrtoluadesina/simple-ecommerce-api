@@ -9,18 +9,18 @@ test('me to be instance of User construct', function() {
 
 test('Id AutoIncrement function', function(){
   var ad = new admin();
-  var length = db.length;
+  var length = db.users.length;
   expect(ad.createUser('Esther', 'sheyi@gmail.com', 'gumlove')).toMatch('User ');
-  expect(db[length - 1].id + 1).toBe(5);
+  expect(db.users[length - 1].id + 1).toBe(5);
 });
 
 test('Creating a new user', function() {
   var me = new user();
   var ad = new admin();
-  var length = db.length;
+  var length = db.users.length;
   expect(me.createUser('badru', 'badru40@gmail.com', 'qwerty')).toMatch('User Created');
   expect(ad.createUser('bella', 'bellarosetv@gmail.com', 'wretysfdr')).toMatch('User ');
-  expect(db.length).toBe(length + 2);
+  expect(db.users.length).toBe(length + 2);
 });
 
 test('Read User By Id', function() {
@@ -28,14 +28,14 @@ test('Read User By Id', function() {
   expect(me.readUserById(1)).toEqual({name: "tomi", email: "aadesina92@gmail.com", password: "qwerty1", id: 1});
 });
 
-test('Search Db for name - tolu', function() {
+test('Search db for name - tolu', function() {
   var me = new user();
   expect(me.search('tolu')).toEqual(expect.arrayContaining([expect.objectContaining({'name' : 'tolu'})]));
 });
 
 test('Read All Users', function() {
   var ad = new admin();
-  var allUsers = db;
+  var allUsers = db.users;
   expect(ad.readAllUsers()).toBe(allUsers)
 });
 
@@ -52,9 +52,9 @@ test('Updating a user record', function() {
 
 test('Delete a User', function() {
   var ad = new admin();
-  var length = db.length;
+  var length = db.users.length;
   expect(ad.deleteAUser(2)).toMatch('User Deleted');
-  expect(db.length).toBe(length - 1);
+  expect(db.users.length).toBe(length - 1);
 });
 
 test('Delete All Users', function() {

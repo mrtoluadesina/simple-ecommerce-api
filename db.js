@@ -4,5 +4,8 @@ var users = [
   {name: "izu", email: "izukuzu@gmail.com", password: "izzyu", id: 3},
   {name: "ive", email: "iveotv@gmail.com", password: "ivesmile", id: 4}
 ];
+var orders = []
 
-module.exports = users;
+module.exports = {
+  users, orders
+};

@@ -33,12 +33,15 @@ User.prototype.update = function(name, email, password, id) {
 }
 User.prototype.search = function(name) {
   console.log(name);
+  var found = [];
   for (var i = 0; i < db.length; i++) {
     if (db[i].name === name) {
-      console.log(db[i]);
-      return db[i];
+      found.push(db[i]);
     }
   }
+  if (found.length > 0) { 
+    return found 
+  } return false;
 }
 
 module.exports = User;

@@ -35,3 +35,9 @@ test('Searching for a user by name', function() {
 test('Updating a user record', function() {
   expect(me.update('izu Ogbodo', 'izuking@gmail.com', 'izykinging', 3)).toEqual({name: 'izu Ogbodo', email: 'izuking@gmail.com', password: 'izykinging', id: 3});
 });
+
+test('Delete a User', function() {
+  var length = db.length;
+  expect(ad.deleteAUser(2)).toMatch('User Deleted');
+  expect(db.length).toBe(length - 1);
+});

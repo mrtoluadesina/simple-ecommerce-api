@@ -20,14 +20,14 @@ Admin.prototype.deleteAUser = function(id) {
   var who = db.indexOf(toDelete);
   db.splice(who,1);
   console.log(db);
-  return db;
+  return 'User Deleted';
 }
 
 Admin.prototype.deleteAllUsers = function() {
   console.log('Delete All Users');
   db = [];
   console.log(db);
-  return db;
+  return 'All Users Deleted';
 }
 
 

@@ -20,7 +20,7 @@ test('Read User By Id', function() {
 });
 
 test('Search Db for name - tolu', function() {
-  expect(me.search('tolu')).toEqual(expect.objectContaining({'name' : 'tolu'}));
+  expect(me.search('tolu')).toEqual(expect.arrayContaining([expect.objectContaining({'name' : 'tolu'})]));
 });
 
 test('Read All Users', function() {
@@ -29,7 +29,8 @@ test('Read All Users', function() {
 });
 
 test('Searching for a user by name', function() {
-  expect(me.search('ive')).toEqual(expect.objectContaining({'name' : 'ive'}));
+  expect(me.search('ive')).toEqual(expect.arrayContaining([expect.objectContaining({'name' : 'ive'})]));
+  expect(me.search('ochuko')).toBeFalsy();
 });
 
 test('Updating a user record', function() {

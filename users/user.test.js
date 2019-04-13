@@ -31,3 +31,7 @@ test('Read All Users', function() {
 test('Searching for a user by name', function() {
   expect(me.search('ive')).toEqual(expect.objectContaining({'name' : 'ive'}));
 });
+
+test('Updating a user record', function() {
+  expect(me.update('izu Ogbodo', 'izuking@gmail.com', 'izykinging', 3)).toEqual({name: 'izu Ogbodo', email: 'izuking@gmail.com', password: 'izykinging', id: 3});
+});

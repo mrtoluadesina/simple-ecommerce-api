@@ -14,4 +14,16 @@ Admin.prototype.readAllUsers = function() {
   return db;
 }
 
+Admin.prototype.deleteAUser = function() {
+  console.log('Delete A user');
+}
+
+Admin.prototype.deleteAllUsers = function() {
+  console.log('Delete All Users');
+  db = [];
+  console.log(db);
+  return db;
+}
+
+
 module.exports = Admin;

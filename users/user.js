@@ -22,9 +22,9 @@ User.prototype.readUserById = function(id) {
     }
   }
 }
-User.prototype.update = function(id, name, email, password) {
-  console.log('update done!');
-  var person = User.readUserById(id);
+User.prototype.update = function(name, email, password, id) {
+  console.log('Updating user information');
+  var person = User.prototype.readUserById(id);
   person.name = name;
   person.email = email;
   person.password = password;

@@ -10,8 +10,8 @@ test('me to be instance of User construct', function() {
 
 test('Creating a new user', function() {
   var length = db.length;
-  expect(me.createUser('tolu', 'tadesina90@gmail.com', 'qwerty')).toMatch('User Created');
-  expect(ad.createUser('ive', 'iveotv@gmail.com', 'wretysfdr')).toMatch('User ');
+  expect(me.createUser('badru', 'badru40@gmail.com', 'qwerty')).toMatch('User Created');
+  expect(ad.createUser('bella', 'bellarosetv@gmail.com', 'wretysfdr')).toMatch('User ');
   expect(db.length).toBe(length + 2);
 });
 
@@ -41,3 +41,8 @@ test('Delete a User', function() {
   expect(ad.deleteAUser(2)).toMatch('User Deleted');
   expect(db.length).toBe(length - 1);
 });
+
+test('Delete All Users', function() {
+  var length = db.length;
+  expect(ad.deleteAllUsers()).toEqual(expect.arrayContaining([]));
+})

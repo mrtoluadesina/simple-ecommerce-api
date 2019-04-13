@@ -1,24 +1,24 @@
-var users = require('../db');
+var db = require('../db');
 
 function User() {
   
 }
 User.prototype.createUser = function(name, email, password) {
   console.log('User created');
-  users.push({
+  db.push({
     name : this.name,
     email: this.email,
     password: this.email,
-    id: users.length > 0 ? users[users.length - 1].id + 1 : 1
+    id: db.length > 0 ? db[db.length - 1].id + 1 : 1
   });
   return 'User Created';
 }
 User.prototype.readUserById = function(id) {
   console.log(id);
-  for (var i = 0; i < users.length; i++) {
-    if (users[i].id === id) {
-      console.log(users[i]);
-      return users[i];
+  for (var i = 0; i < db.length; i++) {
+    if (db[i].id === id) {
+      console.log(db[i]);
+      return db[i];
     }
   }
 }
@@ -33,10 +33,10 @@ User.prototype.update = function(name, email, password, id) {
 }
 User.prototype.search = function(name) {
   console.log(name);
-  for (var i = 0; i < users.length; i++) {
-    if (users[i].name === name) {
-      console.log(users[i]);
-      return users[i];
+  for (var i = 0; i < db.length; i++) {
+    if (db[i].name === name) {
+      console.log(db[i]);
+      return db[i];
     }
   }
 }

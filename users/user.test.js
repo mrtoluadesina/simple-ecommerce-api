@@ -27,3 +27,7 @@ test('Read All Users', function() {
   var allUsers = db;
   expect(ad.readAllUsers()).toBe(allUsers)
 });
+
+test('Searching for a user by name', function() {
+  expect(me.search('ive')).toEqual(expect.objectContaining({'name' : 'ive'}));
+});

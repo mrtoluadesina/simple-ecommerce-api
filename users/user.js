@@ -28,6 +28,8 @@ User.prototype.update = function(name, email, password, id) {
   person.name = name;
   person.email = email;
   person.password = password;
+  console.log(person);
+  return person;
 }
 User.prototype.search = function(name) {
   console.log(name);

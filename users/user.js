@@ -1,16 +1,15 @@
 var db = require('../db');
 var order = require('../orders/order')
 
-function User(id) {
+function User() {
   this.id = db.users.length > 0 ? db.users[db.users.length - 1].id + 1 : 1;
 }
 User.prototype.createUser = function(name, email, password) {
-  var create = new User;
-  create.name = name;
-  create.email = email;
-  create.password = password;
+  this.name = name;
+  this.email = email;
+  this.password = password;
   console.log('User created');
-  db.users.push(create);
+  db.users.push(this);
   return 'User Created';
 }
 User.prototype.readUserById = function(id) {

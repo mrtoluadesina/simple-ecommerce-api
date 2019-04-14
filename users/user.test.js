@@ -97,3 +97,8 @@ test('Delete all Orders', function() {
   var ad = new admin();
   expect(ad.deleteAllOrders()).toBeTruthy();
 });
+
+test('Delete one Order', function() {
+  var ad = new admin();
+  expect(ad.deleteAnOrder(1)).toMatch('Order D');
+});

@@ -12,7 +12,6 @@ test('Id AutoIncrement function', function(){
   var ad = new admin();
   var length = db.users.length;
   expect(ad.createUser('Esther', 'sheyi@gmail.com', 'gumlove')).toMatch('User ');
-  expect(db.users[length - 1].id + 1).toBe(5);
 });
 
 test('Creating a new user', function() {
@@ -60,13 +59,22 @@ test('Delete a User', function() {
 
 test('Delete All Users', function() {
   var ad = new admin();
+  ad.createUser('ekressa', 'ekey@est.her', 'decagon');
+  console.log(db.users);
   expect(ad.deleteAllUsers()).toEqual(expect.arrayContaining([]));
 })
 
 test('Creating a new order', function() {
-  var me = new user();
-  expect(me.placeOrder('jeans') instanceof order).toBeTruthy();
-  expect(me.placeOrder()).toMatch('Invalid');
+  var tunde = new user();
+  tunde.createUser('tunde', 'tambo@gmail.com', 'dfgfjkd');
+  var bayo = new user();
+  bayo.createUser('bayo', 'tambo@gmail.com', 'dfgfjkd');
+  expect(tunde.placeOrder('jeans') instanceof order).toBeTruthy();
+  expect(bayo.placeOrder()).toMatch('Invalid');
+  expect(bayo.placeOrder('tshirts', 'sneakers').user_id).toBe(bayo.id);
+  expect(tunde.placeOrder('tshirts', 'sneakers').user_id).toBe(tunde.id);
+  console.log(db.users)
+  console.log(db.orders)
 });
 
 test('Read All Orders', function() {

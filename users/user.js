@@ -1,15 +1,16 @@
 var db = require('../db');
+var order = require('../orders/order')
 
-function User() {
-
+function User(id) {
+  this.id = db.users.length > 0 ? db.users[db.users.length - 1].id + 1 : 1;
 }
 User.prototype.createUser = function(name, email, password) {
-  this.name = name;
-  this.email = email;
-  this.password = password;
-  this.id = db.users.length > 0 ? db.users[db.users.length - 1].id + 1 : 1;
+  var create = new User;
+  create.name = name;
+  create.email = email;
+  create.password = password;
   console.log('User created');
-  db.users.push(this);
+  db.users.push(create);
   return 'User Created';
 }
 User.prototype.readUserById = function(id) {
@@ -46,10 +47,11 @@ User.prototype.placeOrder = function() {
   if (arguments.length === 0) {
       return 'Invalid Order';
   }
-  var myOrder = Order.prototype.createOrder();
+  var myOrder = order.prototype.createOrder();
   myOrder.user_id = this.id;
   myOrder.products = Array.prototype.slice.call(arguments);
-  orders.push(myOrder);
+  db.orders.push(myOrder);
+  console.log(myOrder);
   return myOrder;
 }
 

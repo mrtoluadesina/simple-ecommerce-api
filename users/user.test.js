@@ -1,6 +1,7 @@
 var db = require('../db');
 var user = require('./user');
 var admin = require('./admin');
+var order = require('../orders/order')
 
 test('me to be instance of User construct', function() {
   var me = new user();
@@ -61,3 +62,9 @@ test('Delete All Users', function() {
   var ad = new admin();
   expect(ad.deleteAllUsers()).toEqual(expect.arrayContaining([]));
 })
+
+test('Creating a new order', function() {
+  var me = new user();
+  expect(me.placeOrder('jeans') instanceof order).toBeTruthy();
+  expect(me.placeOrder()).toMatch('Invalid');
+});

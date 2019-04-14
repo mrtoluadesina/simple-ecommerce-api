@@ -36,4 +36,13 @@ Admin.prototype.readAllOrders = function() {
   return db.orders;
 }
 
+Admin.prototype.readOrderById = function(id) {
+  console.log('read one order by Id');
+  for (var i = 0; i < db.orders.length; i++) {
+    if (db.orders[i].id === id)
+      console.log(db.orders[i]);
+      return db.orders[i];
+  }
+}
+ 
 module.exports = Admin;

@@ -10,5 +10,10 @@ function Order() {
 Order.prototype.createOrder = function() {
   return new Order;
 }
+Order.prototype.readAllOrders = function() {
+  console.log('reading all orders ....');
+  console.log(db.orders);
+  return db.orders;
+}
 
 module.exports = Order;

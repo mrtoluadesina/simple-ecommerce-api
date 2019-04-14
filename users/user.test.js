@@ -72,7 +72,7 @@ test('Creating a new order', function() {
 test('Read All Orders', function() {
   var ad = new admin();
   var allOrders = db.orders;
-  expect(ad.readAllOrders()).toBe(allOrders);
+  expect(ad.getAllOrders()).toBe(allOrders);
 });
 
 test('Read one Order by it Id', function() {

@@ -29,6 +29,7 @@ Order.prototype.editOrderDetails = function() {
 }
 Order.prototype.deleteAnOrder = function() {
   console.log('Delete one order!');
+  
 }
 Order.prototype.deleteAllOrders = function() {
   console.log('Delete All Orders !');

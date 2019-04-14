@@ -1,5 +1,6 @@
 var db = require('../db');
 var User = require('./user');
+var order = require('../orders/order')
 
 function Admin() {
 
@@ -30,10 +31,9 @@ Admin.prototype.deleteAllUsers = function() {
   return 'All Users Deleted';
 }
 
-Admin.prototype.readAllOrders = function() {
-  console.log('read all orders');
-  console.log(db.orders);
-  return db.orders;
+Admin.prototype.getAllOrders = function() {
+  console.log(order.prototype.readAllOrders());
+  return order.prototype.readAllOrders();
 }
 
 Admin.prototype.readOrderById = function(id) {

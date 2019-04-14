@@ -68,3 +68,9 @@ test('Creating a new order', function() {
   expect(me.placeOrder('jeans') instanceof order).toBeTruthy();
   expect(me.placeOrder()).toMatch('Invalid');
 });
+
+test('Read All Users', function() {
+  var ad = new admin();
+  var allOrders = db.orders;
+  expect(ad.readAllOrders()).toBe(allOrders);
+});

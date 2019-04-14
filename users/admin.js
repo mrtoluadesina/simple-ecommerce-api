@@ -30,5 +30,10 @@ Admin.prototype.deleteAllUsers = function() {
   return 'All Users Deleted';
 }
 
+Admin.prototype.readAllOrders = function() {
+  console.log('read all orders');
+  console.log(db.orders);
+  return db.orders;
+}
 
 module.exports = Admin;

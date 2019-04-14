@@ -41,5 +41,9 @@ Admin.prototype.getOrderById = function(id) {
   console.log('read one order by Id');
   return order.prototype.readOrderById();
 }
+
+Admin.prototype.deleteAllOrders = function() {
+  return order.prototype.deleteAllOrders();
+}
  
 module.exports = Admin;

@@ -69,8 +69,18 @@ test('Creating a new order', function() {
   expect(me.placeOrder()).toMatch('Invalid');
 });
 
-test('Read All Users', function() {
+test('Read All Orders', function() {
   var ad = new admin();
   var allOrders = db.orders;
   expect(ad.readAllOrders()).toBe(allOrders);
+});
+
+test('Read one Order by it Id', function() {
+  var ad = new admin();
+  expect(ad.readOrderById(1)).toEqual({
+    date: 'Sat Apr 13 2019',
+    time: '10:20:13 GMT+0100 (West Africa Standard Time)',
+    id: 1,
+    user_id: 2,
+    products: [ 'jeans', 'polo' ] });
 });

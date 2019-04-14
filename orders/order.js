@@ -15,5 +15,13 @@ Order.prototype.readAllOrders = function() {
   console.log(db.orders);
   return db.orders;
 }
+Order.prototype.readOrderById = function(id) {
+  console.log('reading ...');
+  for (var i = 0; i < db.orders.length; i++) {
+    if (db.orders[i].id === id)
+      console.log(db.orders[i]);
+      return db.orders[i];
+  }
+}
 
 module.exports = Order;

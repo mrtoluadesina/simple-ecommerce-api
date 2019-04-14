@@ -2,8 +2,9 @@ var db = require('../db');
 var User = require('./user');
 var order = require('../orders/order')
 
-function Admin() {
-
+function Admin(name, email, password) {
+  User.call(this, name, email, password);
+  this.admin = true;
 }
 
 Admin.prototype = Object.create(User.prototype);

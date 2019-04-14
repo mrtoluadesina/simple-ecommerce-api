@@ -92,3 +92,8 @@ test('Read one Order by it Id', function() {
     user_id: 2,
     products: [ 'jeans', 'polo' ] });
 });
+
+test('Delete all Orders', function() {
+  var ad = new admin();
+  expect(ad.deleteAllOrders()).toBeTruthy();
+});

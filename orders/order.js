@@ -23,5 +23,17 @@ Order.prototype.readOrderById = function(id) {
       return db.orders[i];
   }
 }
+Order.prototype.editOrderDetails = function() {
+  console.log('updating ... ');
 
+}
+Order.prototype.deleteAnOrder = function() {
+  console.log('Delete one order!');
+}
+Order.prototype.deleteAllOrders = function() {
+  console.log('Delete All Orders !');
+  db.orders.length = 0;
+  console.log(db.orders);
+  return db.orders;
+}
 module.exports = Order;

@@ -42,13 +42,13 @@ User.prototype.search = function(name) {
     return found 
   } return false;
 }
-User.prototype.placeOrder = function() {
+User.prototype.placeOrder = function(products) {
   if (arguments.length === 0) {
       return 'Invalid Order';
   }
   var myOrder = order.prototype.createOrder();
   myOrder.user_id = this.id;
-  myOrder.products = Array.prototype.slice.call(arguments);
+  myOrder.products = products;
   db.orders.push(myOrder);
   console.log(myOrder);
   return myOrder;

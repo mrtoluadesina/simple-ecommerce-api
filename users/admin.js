@@ -39,14 +39,12 @@ Admin.prototype.getAllOrders = function() {
 
 Admin.prototype.getOrderById = function(id) {
   console.log('read one order by Id');
-  return order.prototype.readOrderById();
+  return order.prototype.readOrderById(id);
 }
 
-Admin.prototype.updateOrder = function() {
+Admin.prototype.updateOrder = function(id, products) {
   console.log('update an order');
-  console.log(Array.prototype.slice.call(arguments));
-  var updated = Array.prototype.slice.call(arguments);
-  return order.prototype.editOrderDetails(updated);
+  return order.prototype.editOrderDetails(id, products);
 }
 
 Admin.prototype.deleteAnOrder = function() {

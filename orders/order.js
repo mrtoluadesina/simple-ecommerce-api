@@ -18,16 +18,17 @@ Order.prototype.readAllOrders = function() {
 Order.prototype.readOrderById = function(id) {
   console.log('reading ...');
   for (var i = 0; i < db.orders.length; i++) {
-    if (db.orders[i].id === id)
+    if (db.orders[i].id === id) {
       console.log(db.orders[i]);
       return db.orders[i];
+    }
   }
 }
-Order.prototype.editOrderDetails = function() {
+Order.prototype.editOrderDetails = function(id, products) {
   console.log('updating ... ');
-  var order = Order.prototype.readOrderById(this.id);
+  var order = Order.prototype.readOrderById(id);
   console.log(order);
-  order.products = arguments[0];
+  order.products = products;
   console.log(order.products);
   return 'Order Edited';
 }

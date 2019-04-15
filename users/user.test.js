@@ -102,3 +102,11 @@ test('Delete one Order', function() {
   var ad = new admin();
   expect(ad.deleteAnOrder(1)).toMatch('Order D');
 });
+
+test('Updating Order Details', function() {
+  var ad = new admin();
+  ad.placeOrder('bags', 'shoes')
+  console.log(db.orders);
+  expect(ad.updateOrder('polos', 'tables')).toMatch('Order ');
+  console.log(db.orders);
+});

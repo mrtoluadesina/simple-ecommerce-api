@@ -69,10 +69,10 @@ test('Creating a new order', function() {
   tunde.createUser('tunde', 'tambo@gmail.com', 'dfgfjkd');
   var bayo = new user();
   bayo.createUser('bayo', 'tambo@gmail.com', 'dfgfjkd');
-  expect(tunde.placeOrder('jeans') instanceof order).toBeTruthy();
+  expect(tunde.placeOrder(['jeans']) instanceof order).toBeTruthy();
   expect(bayo.placeOrder()).toMatch('Invalid');
-  expect(bayo.placeOrder('tshirts', 'sneakers').user_id).toBe(bayo.id);
-  expect(tunde.placeOrder('tshirts', 'sneakers').user_id).toBe(tunde.id);
+  expect(bayo.placeOrder(['tshirts', 'sneakers']).user_id).toBe(bayo.id);
+  expect(tunde.placeOrder(['tshirts', 'sneakers']).user_id).toBe(tunde.id);
   console.log(db.users)
   console.log(db.orders)
 });
@@ -105,8 +105,9 @@ test('Delete one Order', function() {
 
 test('Updating Order Details', function() {
   var ad = new admin();
-  ad.placeOrder('bags', 'shoes')
+  var order = ad.placeOrder(['bags', 'shoes'])
+  var orderId = order.id;
   console.log(db.orders);
-  expect(ad.updateOrder('polos', 'tables')).toMatch('Order ');
+  expect(ad.updateOrder(orderId, ['polos', 'tables'])).toMatch('Order ');
   console.log(db.orders);
 });

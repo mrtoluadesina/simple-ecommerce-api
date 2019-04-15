@@ -42,6 +42,13 @@ Admin.prototype.getOrderById = function(id) {
   return order.prototype.readOrderById();
 }
 
+Admin.prototype.updateOrder = function() {
+  console.log('update an order');
+  console.log(Array.prototype.slice.call(arguments));
+  var updated = Array.prototype.slice.call(arguments);
+  return order.prototype.editOrderDetails(updated);
+}
+
 Admin.prototype.deleteAnOrder = function() {
   console.log('delete one order');
   return order.prototype.deleteAnOrder();

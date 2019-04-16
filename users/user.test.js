@@ -91,6 +91,7 @@ test('Read one Order by it Id', function() {
     id: 1,
     user_id: 2,
     products: [ 'jeans', 'polo' ] });
+    expect(ad.getOrderById()).toBeFalsy();
 });
 
 test('Delete all Orders', function() {
